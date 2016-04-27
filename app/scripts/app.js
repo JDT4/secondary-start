@@ -8,6 +8,7 @@
 		$stateProvider
 			.state('landing', {
 				url: '/',
+				controller: 'ControlWars as landing',
 				templateUrl: "../templates/home.html"
 			});
 	}

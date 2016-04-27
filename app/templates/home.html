@@ -1,9 +1,20 @@
 <h3>Hi Everyone!</h3>
-<!--<div class="detail">
+<div class="detail">
+	<!--NEXT STEP IS TO LOOP THIS-->
 	<div class="council">
-		<h2><span id="council"></span> <span id="council_code"></span> Council</h2>
-		<a ui-sref="#">abc</a>
+		<h2>{{swapi1.council}} Council</h2>
 		<div id="list">
+			<h3>{{swapi1.data[1].name}}</h3>
+			<p>{{swapi1.data[1].content}}</p>
+			<p><a href="{{swapi1.data[1].URL}}">Read more here</a></p>
 		</div>
 	</div>
-</div>-->
+	<div class="council">
+		<h2>{{swapi2.council}} Council</h2>
+		<div id="list">
+			<h3>{{swapi2.data[1].name}}</h3>
+			<p>{{swapi2.data[1].content}}</p>
+			<p><a href="{{swapi2.data[1].URL}}">Read more here</a></p>
+		</div>
+	</div>
+</div>
