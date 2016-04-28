@@ -1,6 +1,6 @@
 	angular
 		.module('apiServices', [])
-		.service('apiWars', ['$http', function ($http) {
+		.service('apiCouncil', ['$http', function ($http) {
 				this.getTPDatabyPostCode = function (postcode) {
 					console.log(postcode);
 					var request = $http({

@@ -1,3 +1,21 @@
-div {
-	background-color: hotpink;
+body {
+	background-color: lightgray;
+	padding: 2em;
+	transition: all 1s ease-in-out;
+}
+
+.list {
+	background-color: aliceblue;
+	border-radius: 1em;
+	padding: 1em;
+	border: 1px solid gray;
+}
+
+.listItem {
+	border-bottom: 0.1px solid gray;
+}
+
+.listItem .noLink {
+	color: black;
+	text-decoration: none;
 }

@@ -1,6 +1,6 @@
 var app =
 	angular
-	.module('starWars', ['ui.router', 'apiServices'])
+	.module('councilSpend', ['ui.router', 'apiServices'])
 	.config(
 		function ($locationProvider, $stateProvider) {
 			$locationProvider
@@ -11,7 +11,12 @@ var app =
 			$stateProvider
 				.state('landing', {
 					url: '/',
-					controller: 'ControlWars as landing',
+					controller: 'CouncilControl as landing',
 					templateUrl: "../templates/home.html"
+				})
+				.state('detail', {
+					url: '/detail',
+					controller: 'CouncilControl as detail',
+					templateUrl: "../templates/detail.html"
 				});
 		});

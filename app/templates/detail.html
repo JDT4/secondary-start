@@ -1,0 +1,11 @@
+<div class="council" ng-repeat="council in councils">
+	<h2>{{council.council}} Council</h2>
+	<div class="list">
+		<div class="listItem" ng-repeat="item in council.data">
+			<h3 ng-click="showDetails = ! showDetails"><a class="noLink" href="#">{{item.name}}</a></h3>
+			<div class="item" ng-show="showDetails">
+				<p>{{item.content}} See the <a href="{{item.URL}}">full research here</a>.</p>
+			</div>
+		</div>
+	</div>
+</div>
