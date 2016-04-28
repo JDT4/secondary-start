@@ -2,12 +2,11 @@
  		.module('councilSpend')
  		.controller('CouncilControl', ['$scope', 'apiCouncil', function ($scope, apiCouncil) {
  			var postcode = "RH80DX";
- 			$scope.update = function (postcode) {
- 				postcode = angular.copy(postcode);
+ 			$scope.update = function (code) {
+ 				postcode = (code);
  			};
  			apiCouncil.getTPDatabyPostCode(postcode)
  				.success(function (response) {
- 					//console.log(response);
  					$scope.councils = response;
  				})
  				.error(function (response) {

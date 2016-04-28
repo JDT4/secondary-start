@@ -1,21 +1,19 @@
 <!--Form and button
-User enters postcode
 Postcode is stringified or spaces removed NOT ENCODED
-Postcode is used as the argument in the function (apiCouncil.getTPDatabyPostCode(postcode) that can be found in CouncilControl)
-Button runs the function and takes you to the detail view
-Possibly rather than running the function it just creates a var = postcde that is accessable to CouncilControl?
+Postcode is used as the argument in the function (apiCouncil.getTPDatabyPostCode(postcode)
+Button changes the value of postcode and takes you to the detail view
 -->
 
 <div class="list">
-	<div class="council" ng-repeat="council in councils">
-		<h2>{{council.council}} Council</h2>
-	</div>
+	<h1>Title</h1>
 	<form novalidate class="postcode-form">
 		Postcode:
 		<input type="text" ng-model="postcode" />
-		<input type="submit" ng-click="update(postcode)" ui-sref="detail" value="GO!" />
+		<input type="submit" ng-click="update(code)" ui-sref="detail" value="GO!" />
 	</form>
 	<pre>user = {{postcode}}</pre>
-	<pre>master = {{master | json}}</pre>
+	<div class="council" ng-repeat="council in councils">
+		<h2>{{council.council}} Council</h2>
+	</div>
 
 </div>
