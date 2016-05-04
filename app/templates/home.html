@@ -5,10 +5,10 @@ Button changes the value of postcode and takes you to the detail view
 -->
 
 <div class="list">
-	<h1>Title</h1>
+	<h1>Title goes here</h1>
 	<form novalidate class="postcode-form">
 		Postcode:
-		<input type="text" ng-model="postcode" />
+		<input type="text" ng-model="postcode" ng-model-options="{ debounce: 800 }" />
 		<input type="submit" ng-click="update(code)" ui-sref="detail" value="GO!" />
 	</form>
 	<pre>user = {{postcode}}</pre>
