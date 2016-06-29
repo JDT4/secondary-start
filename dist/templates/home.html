@@ -1,19 +1,32 @@
-<!--Form and button
-Postcode is stringified or spaces removed NOT ENCODED
-Postcode is used as the argument in the function (apiCouncil.getTPDatabyPostCode(postcode)
-Button changes the value of postcode and takes you to the detail view
--->
-
-<div class="list">
-	<h1>Title</h1>
-	<form novalidate class="postcode-form">
-		Postcode:
-		<input type="text" ng-model="postcode" />
-		<input type="submit" ng-click="update(code)" ui-sref="detail" value="GO!" />
+<div class="area">
+	<h1>Welcome to Council Data</h1>
+	<h4>Type in your postcode to learn how your local council spends your money</h4>
+	<form novalidate class="postcode-form" ng-submit="findData(postcode)">
+		<input type="text" name="post" ng-model="postcode" maxlength="7" style="text-transform:uppercase" />
+		<button type="submit">GO!</button>
 	</form>
-	<pre>user = {{postcode}}</pre>
-	<div class="council" ng-repeat="council in councils">
-		<h2>{{council.council}} Council</h2>
+	<div class="loading" ng-show="loading">
+		<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
 	</div>
+</div>
 
+<div class="council" ng-repeat="council in councils">
+	<h2>{{council.council}} Council</h2>
+	<div class="list">
+		<div class="listItem" ng-repeat="item in council.data">
+			<a class="noLink" ng-click="showDetails = ! showDetails">
+				<h3>
+					{{item.name}}
+				<span ng-show="!showDetails">&#x25BA</span>
+				<span ng-show="showDetails">&#x25BC</span>
+				</h3>
+			</a>
+			<div class="item" ng-show="showDetails">
+				<p>In its {{item.publication_date| limitTo : 4 : begin}} report <em>{{item.name}}</em>, the TaxPayers' Alliance found that: </p>
+				<p>{{item.content}}</p>
+				<p><a href="{{item.URL}}">Go to the full report</a></p>
+			</div>
+		</div>
+	</div>
 </div>

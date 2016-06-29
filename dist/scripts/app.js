@@ -14,9 +14,4 @@ var app =
 					controller: 'CouncilControl as landing',
 					templateUrl: "../templates/home.html"
 				})
-				.state('detail', {
-					url: '/detail',
-					controller: 'CouncilControl as detail',
-					templateUrl: "../templates/detail.html"
-				});
 		});
